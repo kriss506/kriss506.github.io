@@ -1,1 +1,22 @@
+#welcome {height:200px;}
 
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--main-red);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+    z-index: 10;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    margin-right: 2rem;
+  }
+
+  .bg-light-blue {
+      background-color: rgb(220,120,120);
+  }

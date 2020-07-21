@@ -1,13 +1,27 @@
-body 
-{color:black;
-font: size 18;px;
-font-family:arial;
-text-align:center;
-border-style:solid;
-border-width:1px;}
+#welcome {height:200px;}
 
-ul,li {
-    list-style-type:none;
-    text-align:center;
-    color:grey;
-}
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--main-red);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+    z-index: 10;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    margin-right: 2rem;
+  }
+
+  .bg-light-blue {
+      background-color: rgb(220,120,120);
+  }
+
+  #work {height:200px;}
+  #welcome {height:600px;}
+  .icon {width:100px;height:100px;    margin: auto;    
+    display: block;}

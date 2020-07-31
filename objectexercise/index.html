@@ -48,12 +48,12 @@
             <button type="button" class="btn btn-outline-primary" id='button02'>Add task</button>
             <button type="button" class="btn btn-outline-primary" id='button03'>Delete task 10</button>
             <button type="button" class="btn btn-outline-primary" id='button04'>Reset tasks</button>
-            <button type="button" class="btn btn-outline-primary" id='button05'>Status=Done tasks</button>
-            <button type="button" class="btn btn-outline-primary" id='button06'>Status=Review tasks</button>
+            <button type="button" class="btn btn-outline-primary" id='button05'>Filter: Done</button>
+            <button type="button" class="btn btn-outline-primary" id='button06'>Filter: Review</button>
         </nav>
 
         <div class="row content">
-            <div class="col-lg-3 border">
+            <div class="col-lg-1 border">
                 <div>
                     <h1 id='columnOneHeading'></h1>
                 </div>
@@ -77,14 +77,24 @@
 
             </div>
 
-            <div class="col-lg-9 border">
+            <div class="col-lg-5 border">
                 <div>
-                    <h1 id="columnTwoHeading"></h1>
+                    <h3>Tasks Array</h3>
                     <div id="output">
 
                     </div>
+   
+                    
+                </div>
 
-                    <div id="output2">
+
+            </div>
+            <div class="col-lg-5 border">
+                <div>
+                    <h1 id="columnTwoHeading"></h1>
+                
+   <h3>Filtered Output</h3>
+                    <div id="output2" class="border">
 
                     </div>
                 </div>
@@ -96,7 +106,6 @@
         </div>
         <div class="row footer">
             <div class="col-lg-12">
-                <h2>Footer</h2>
             </div>
         </div>
     </div>

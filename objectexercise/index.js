@@ -3,7 +3,7 @@ let tasks = [];
 
 function resetTasks() {
     tasks = [];
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 21; i++) {
         tasks.push(randomTask(i));
 
     }
@@ -110,24 +110,40 @@ function clearMainOuput() {
     output.innerHTML = st;
 }
 
-function updateOutput2(st) {
-    const output = document.getElementById("output2");
-  
-    output.innerHTML = st;
+function updateOutput2(tasks) {
+    const output2 = document.getElementById("output2");
+    let st = "";
+    let t = tasks;
+    for (let i = 0; i < t.length; i++) {
+        const element = t[i];
+        st = st + JSON.stringify(element) + "<br>";
+
+    }
+    output2.innerHTML = st;
 }
 
 
 //     output.innerHTML=st;;
 // }
+
+let ALLTASKS = null;
+let DONE =null; 
+let TODO = null;
+let PROGRESS = null;
+let REVIEW = null;
+
+function resetChecks(){
+     ALLTASKS = taskManager.getTasks();
+     DONE = taskManager.getTasksWithStatus('DONE');
+     TODO = taskManager.getTasksWithStatus('TODO');
+     PROGRESS = taskManager.getTasksWithStatus('IN PROGRESS');
+     REVIEW = taskManager.getTasksWithStatus('REVIEW');
+    
+}
 function init() {
 
     resetTasks();
 
-    const ALLTASKS = taskManager.getTasks();
-const DONE = taskManager.getTasksWithStatus('DONE');
-const TODO = taskManager.getTasksWithStatus('TODO');
-const PROGRESS = taskManager.getTasksWithStatus('IN PROGRESS');
-const REVIEW = taskManager.getTasksWithStatus('REVIEW');
 
 
     let button01 = null;
@@ -140,19 +156,19 @@ const REVIEW = taskManager.getTasksWithStatus('REVIEW');
 
 
     button01 = document.getElementById("button01");
-    button01.addEventListener('click', updateOutput);
+    button01.addEventListener('click', ()=>{ clearMainOuput();resetChecks();updateOutput();});
     button02 = document.getElementById("button02");
-    button02.addEventListener('click', () => { taskManager.addTask({ id: 20, name: 'Go fishing', description: 'Go fishing', assignedTo: 'Sid Smith', dueDate: new Date(), status: 'TODO' }); updateOutput(); })
+    button02.addEventListener('click', () => { taskManager.addTask(randomTask(Math.floor(Math.random()*1000))); updateOutput(); })
     button03 = document.getElementById("button03");
     button03.addEventListener('click', () => { taskManager.deleteTask({ id: 10, name: 'Go fishing', description: 'Go fishing', assignedTo: 'Sid Smith', dueDate: new Date(), status: 'TODO' }); updateOutput() })
     button04 = document.getElementById("button04");
-    button04.addEventListener('click', () => { resetTasks(); updateOutput(); });
+    button04.addEventListener('click', () => {  clearMainOuput();resetTasks();resetChecks(); updateOutput(); });
 
     button05 = document.getElementById("button05");
-    button05.addEventListener('click', () => { clearMainOuput(); updateOutput2(JSON.stringify(DONE,)); });
+    button05.addEventListener('click', () => {  resetChecks();updateOutput2(DONE) });
 
     button06 = document.getElementById("button06");
-    button06.addEventListener('click', () => {  clearMainOuput(); updateOutput2(JSON.stringify(REVIEW));});
+    button06.addEventListener('click', () => {  resetChecks();updateOutput2(REVIEW)});
 
     //updateOutput();
 }

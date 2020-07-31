@@ -1,1 +1,7 @@
+/* [class~=col] {height:100vh;} */
+.row {height: 50vh;}
+.btn {display:inline;margin-right:6px;}
+.content {height:70vh}
+.footer {height:10vh;}
 
+#update02 {border:solid;border-width:1px;}

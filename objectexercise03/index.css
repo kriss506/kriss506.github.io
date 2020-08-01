@@ -1,0 +1,11 @@
+/* [class~=col] {height:100vh;} */
+.row {height: 50vh;}
+.btn {display:inline;margin-right:6px;}
+.content {height:70vh}
+.footer {height:10vh;}
+
+#update02 {border:solid;border-width:1px;}
+.dynamicCard {border:solid;border-width: 1px;height:30px;width:500px;margin-top:10px;padding:4px;}
+.DONE {background-color: lightgreen;;}
+.REVIEW {background-color: rgb(213, 238, 144);;}
+.TODO {background-color: rgb(144, 203, 238);;}

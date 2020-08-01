@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body onload="init()">
+    <div class="container-fluid">
+
+        <div class="jumbotron text-center" style="margin-bottom:0">
+            <h1 id="">Object Exercise</h1>
+            <p id="subHeading"></p>
+        </div>
+
+        <nav class="navbar navbar-expand-sm bg-light">
+
+            <!-- Links -->
+            <!-- <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 3</a>
+                </li>
+            </ul> -->
+           
+        </nav>
+
+        <div class="row content">
+            <div class="col-lg-1 border">
+                <div>
+                    <h1 id='columnOneHeading'></h1>
+                </div>
+                <!-- <nav class="navbar bg-light">
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link 3</a>
+                        </li>
+                    </ul>
+
+                </nav> -->
+
+
+
+            </div>
+
+            <div class="col-lg-5 border">
+                <div>
+                    <h3>Tasks</h3>
+                    <button type="button" class="btn btn-outline-primary" id='button01'>Get all tasks</button>
+                    <button type="button" class="btn btn-outline-primary" id='button02'>Add task</button>
+                    <button type="button" class="btn btn-outline-primary" id='button03'>Delete task 10</button>
+                    <button type="button" class="btn btn-outline-primary" id='button04'>Reset tasks</button>
+        
+                    <div id="output" class="border container-fluid">
+
+                    </div>
+   
+                    
+                </div>
+
+
+            </div>
+            <div class="col-lg-5 border">
+                <div>
+                    <h1 id="columnTwoHeading"></h1>
+                
+   <h3>Filtered</h3>
+   <button type="button" class="btn btn-outline-primary" id='button05'>Filter: Done</button>
+   <button type="button" class="btn btn-outline-primary" id='button06'>Filter: Review</button>
+   <button type="button" class="btn btn-outline-primary" id='button07'>Filter: In Progress</button>
+                    <div id="output2" class="border container-fluid">
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="row footer">
+            <div class="col-lg-12">
+            </div>
+        </div>
+    </div>
+
+<!-- <button id="b100"></button>  -->
+
+
+    <script src="index.js"></script>
+</body>
+<!-- browser-sync -s -w -->
+
+</html>

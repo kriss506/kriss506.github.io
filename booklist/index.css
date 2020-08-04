@@ -1,0 +1,20 @@
+.flexcontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: space-evenly;
+}
+.flexitem {
+  flex-basis: 25%;
+}
+
+img {
+  height: 350px;
+  width: 200px;
+  display: block;
+}
+
+button {
+  width: 200px;
+}

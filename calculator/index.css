@@ -1,0 +1,95 @@
+.grid-container {
+  width: 50%;
+  display: grid;
+  grid-template-columns: 75px 75px 75px 75px;
+  grid-template-rows: 50px 75px 75px 75px 75px 75px 75px 75px;
+  text-align: center;
+  font-size: 42px;
+  font-family: arial;
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+}
+.grid-item:hover {
+  background-color: rgb(192, 202, 202);
+}
+.equals:hover {
+  background-color: rgb(214, 187, 68);
+}
+.grid-item {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-style: solid;
+  border-width: 1px;
+  padding-top: 20px;
+  color: rgb(79, 79, 126);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+}
+.display,
+.secondaryDisplay {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  color: rgb(255, 255, 255);
+  background-color: rgb(2, 2, 34);
+}
+.cancel {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding-top: 14px;
+}
+.zero {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.minus {
+  padding-top: 14px;
+}
+.multiply {
+  padding-top: 24px;
+}
+.divide {
+  padding-top: 16px;
+}
+.decimal {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  padding-bottom: 40px;
+  padding-top: 20px;
+}
+.equals {
+  grid-row-start: 5;
+  grid-row-end: 8;
+  grid-column-start: 4;
+  text-align: center;
+  padding-top: 90px;
+  background-color: rgb(226, 153, 93);
+}
+
+.backSpace {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  padding-top: 8px;
+}
+.secondaryDisplay {
+  font-size: 24px;
+  padding-right: 4px;
+  text-align: right;
+}
+
+.display {
+  font-size: 42px;
+  overflow: hidden;
+  padding-bottom: 18px;
+  padding-right: 4px;
+  text-align: right;
+}
+input {
+  height: 40px;
+  font-size: 48px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}

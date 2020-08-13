@@ -1,5 +1,5 @@
 .grid-container {
-  width: 50%;
+  width: 310px;
   display: grid;
   grid-template-columns: 75px 75px 75px 75px;
   grid-template-rows: 50px 75px 75px 75px 75px 75px 75px 75px;
@@ -8,6 +8,10 @@
   font-family: arial;
   grid-column-gap: 1px;
   grid-row-gap: 1px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 .grid-item:hover {
   background-color: rgb(192, 202, 202);
@@ -16,7 +20,7 @@
   background-color: rgb(214, 187, 68);
 }
 .grid-item {
-  margin-top: 0px;
+  margin-top: 1px;
   margin-bottom: 0px;
   border-style: solid;
   border-width: 1px;
@@ -24,6 +28,9 @@
   color: rgb(79, 79, 126);
   border-radius: 4px;
   background-color: rgb(255, 255, 255);
+}
+.grid-content {
+  width: 100%;
 }
 .display,
 .secondaryDisplay {
@@ -90,6 +97,8 @@ input {
 
 .flex-container {
   display: flex;
-  justify-content: center;
   margin-top: 5vh;
+  justify-content: center;
+  width: 80%;
+  margin: auto auto auto auto;
 }

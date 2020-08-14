@@ -51,6 +51,8 @@ for (let i = 0; i < buttons.length; i++) {
 function buttonClicked(event) {
     console.log(event.target.innerHTML);
     buttonQueue.unshift(event.target.innerHTML);
+    // Insert items at the start of the queue so that the current click will always be buttonQueue[0]
+    // Which makes it easier to compare the current and previous button clicks
 
 
 
@@ -92,22 +94,37 @@ function buttonClicked(event) {
     if (DIGITS.includes(Number(event.target.innerHTML)) || event.target.innerHTML == '.')
     // First check if 0..9 or a decimal point 
     {
+        let acceptDigit = true;
 
         if (buttonQueue[1] == "=") { equationString = ""; termString = ""; }
         // If the answer is being displayed, and another digit is clicked, reset the calculator strings
 
-        //let lastCharacterOfEquation = equationString.charAt(equationString.length - 1);
 
-        if (event.target.innerHTML == '.' && equationString.length == 0) {
-            equationString = "0";
-        }
-        // Insert a zero before decimal points if the first char of the equation string is a decimal point
 
         if (termString.includes(".") && event.target.innerHTML == '.') {
+            acceptDigit = false;
             // If the term string already includes a decimal point, don't add another one.
+
         }
-        else {
-            //add the digit or decimal point to the equation and term strings
+        if (buttonQueue[1] == "0" && buttonQueue[0] == 0) {
+            acceptDigit = false;
+            /*             buttonQueue[1] is the digit previous to the current one
+                        buttonQueue[0] is the current digit
+                        So, this is checking whether 2 zeroes where entered in succession at the start of the term
+                        If so, we don't want to accept the zero */
+
+        }
+        if (buttonQueue[1] == "0" && buttonQueue[0] > 0) {
+            termString = "";
+            equationString = "";
+            /*              buttonQueue[1] is the digit previous to the current one
+                        buttonQueue[0] is the current digit
+                        So, this is checking whether a digit >0 was entered at the start of the term.
+                        If so, only accept the digit that is greater than 0 by setting the strings to "" */
+        }
+
+        if (acceptDigit) {
+            // If passes the tests, acceptDigit will be true, which signals it's ok to add the digit or decimal point to the equation and term strings
             console.log("a digit was entered");
             console.log(event.target.innerHTML);
             termString += event.target.innerHTML;

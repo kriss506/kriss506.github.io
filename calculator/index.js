@@ -109,19 +109,24 @@ function buttonClicked(event) {
         }
         if (buttonQueue[1] == "0" && buttonQueue[0] == 0 && termString.length == 1) {
             acceptDigit = false;
-            /*             buttonQueue[1] is the digit previous to the current one
-                        buttonQueue[0] is the current digit
-                        So, this is checking whether 2 zeroes where entered in succession at the start of the term
-                        If so, we don't want to accept the zero */
+            /*          
+            buttonQueue[0] is the current digit
+            buttonQueue[1] is the digit previous to the current one
+            Check whether 2 zeroes were entered in succession at the start of the term
+            If so, we don't want to accept the zero 
+            */
 
         }
         if (buttonQueue[1] == "0" && buttonQueue[0] > 0 && termString.length == 1) {
             termString = "";
             //equationString = "";
-            /*              buttonQueue[1] is the digit previous to the current one
-                        buttonQueue[0] is the current digit
-                        So, this is checking whether a digit >0 was entered at the start of the term.
-                        If so, only accept the digit that is greater than 0 by setting the strings to "" */
+
+            /* 
+            buttonQueue[0] is the current digit
+            buttonQueue[1] is the digit previous to the current one
+            If so, only accept the digit that is greater than 0 by setting the strings to "" 
+            Checks whether a digit > 0 was entered at the start of the term.
+            */
         }
 
         if (acceptDigit) {
@@ -156,7 +161,7 @@ function buttonClicked(event) {
             }
             else {
                 // Clicking an operator signals the start of a new term
-                termQueue.push(termString);
+                termQueue.unshift(termString);
                 display.innerHTML = termString;
                 termString = "";
                 console.table(termQueue);
@@ -177,10 +182,11 @@ function buttonClicked(event) {
         console.log(answer);
         display.innerHTML = answer;
         equationString = String(answer);
-        termString = String(answer);
         // Assign the answer to the equation string
+        termQueue.unshift(termString);
         termQueue = [];
-        termQueue.push(answer);
+        termQueue.unshift(answer);
+        termString = String(answer);
 
     }
 

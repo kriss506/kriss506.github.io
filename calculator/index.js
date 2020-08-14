@@ -61,6 +61,7 @@ function buttonClicked(event) {
         equationString = "";
         termString = "";
         termQueue = [];
+        buttonQueue = [];
         //queueDisplay.innerHTML = '';
         secondaryDisplay.innerHTML = '';
         display.innerHTML = "0";
@@ -106,7 +107,7 @@ function buttonClicked(event) {
             // If the term string already includes a decimal point, don't add another one.
 
         }
-        if (buttonQueue[1] == "0" && buttonQueue[0] == 0) {
+        if (buttonQueue[1] == "0" && buttonQueue[0] == 0 && termString.length == 1) {
             acceptDigit = false;
             /*             buttonQueue[1] is the digit previous to the current one
                         buttonQueue[0] is the current digit
@@ -114,9 +115,9 @@ function buttonClicked(event) {
                         If so, we don't want to accept the zero */
 
         }
-        if (buttonQueue[1] == "0" && buttonQueue[0] > 0) {
+        if (buttonQueue[1] == "0" && buttonQueue[0] > 0 && termString.length == 1) {
             termString = "";
-            equationString = "";
+            //equationString = "";
             /*              buttonQueue[1] is the digit previous to the current one
                         buttonQueue[0] is the current digit
                         So, this is checking whether a digit >0 was entered at the start of the term.
